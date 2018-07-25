@@ -17,7 +17,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: false}).then(function (
       var img = document.getElementById('image');
       img.src = window.URL.createObjectURL(blob);
     }, 'image/jpeg', 0.95);
-    stream.getTracks()[0].stop();
+    // stream.getTracks()[0].stop();
   }, 3000);
 }).catch(function (error) {
   console.error('mediaDevice.getUserMedia() error:', error);
