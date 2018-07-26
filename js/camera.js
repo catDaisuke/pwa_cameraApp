@@ -30,6 +30,7 @@ const medias = {audio : false, video : true},
 navigator.getUserMedia(medias, successCallback, errorCallback);
 
 function successCallback(stream) {
+  $("#retry").hide();
   video.srcObject = stream;
   //
   //   setTimeout(function() {
@@ -50,6 +51,7 @@ function successCallback(stream) {
 };
 
 $('#capture').on('click', function() {
+  $("#canvas").show();
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   var w = video.offsetWidth;
@@ -58,11 +60,22 @@ $('#capture').on('click', function() {
   canvas.setAttribute('height', h);
   ctx.drawImage(video, 0, 0, w, h);
   $("#video").hide();
+  $("#image").show();
   canvas.toBlob(function(blob) {
     var img = document.getElementById('image');
     img.src = window.URL.createObjectURL(blob);
   }, 'image/jpeg', 0.95);
-  $("camvas").hide();
+  $("#canvas").hide();
+  $("#capture").hide();
+  $("#retry").show();
+});
+
+$('#retry').on('click', function() {
+  $("#video").show();
+  $("#canvas").hide();
+  $("#image").hide();
+  $("#capture").show();
+  $("#retry").hide();
 });
 
 function errorCallback(err) {
