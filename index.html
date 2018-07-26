@@ -23,14 +23,20 @@
         <div class="container-fluid">
         <h1>cameraApp</h1>
         <div class="row">
-        <video id="video" width="720px" autoplay playsinline></video>
-        <!-- 記録用canvas -->
-        <canvas id="canvas"></canvas>
-        <!-- 記録用img -->
-        <img id="image"></img>
-        </div>        
+            <div class="col-md-10 col-md-offset-1">col-md-10 col-md-offset-1
+            <video id="video" width="720px" autoplay playsinline></video>
+            <!-- 記録用canvas -->
+            <canvas id="canvas"></canvas>
+            <!-- 記録用img -->
+            <img id="image"></img>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-10 col-md-offset-1">col-md-10 col-md-offset-1
         <button id="capture" class="btn btn-default">snap</button>
         <button id="retry" class="btn btn-default">retry</button>
+        </div>
+        </div>
         <script src="js/camera.js"></script>
         </div>
     </body>
