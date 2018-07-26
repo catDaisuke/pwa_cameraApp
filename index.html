@@ -1,5 +1,5 @@
-<!-- index.html -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <link rel="manifest" href="./manifest.json">
         <script>
@@ -20,6 +20,7 @@
         <title>cameraApp</title>
     </head>
     <body>
+        <div class="container-fluid">
         <h1>cameraApp</h1>
         <video id="video" width="720px" autoplay playsinline></video>
         <!-- 記録用canvas -->
@@ -29,5 +30,6 @@
         <button id="capture">snap</button>
         <button id="retry">retry</button>
         <script src="js/camera.js"></script>
+        </div>
     </body>
 </html>
