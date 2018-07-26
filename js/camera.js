@@ -57,10 +57,12 @@ $('#capture').on('click', function() {
   canvas.setAttribute('width', w);
   canvas.setAttribute('height', h);
   ctx.drawImage(video, 0, 0, w, h);
+  $("#video").hide();
   canvas.toBlob(function(blob) {
     var img = document.getElementById('image');
     img.src = window.URL.createObjectURL(blob);
   }, 'image/jpeg', 0.95);
+  $("camvas").hide();
 });
 
 function errorCallback(err) {
