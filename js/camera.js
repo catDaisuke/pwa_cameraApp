@@ -31,6 +31,8 @@ navigator.getUserMedia(medias, successCallback, errorCallback);
 
 function successCallback(stream) {
   $("#retry").hide();
+  $("#canvas").hide();
+  $("#image").hide();
   video.srcObject = stream;
   //
   //   setTimeout(function() {
